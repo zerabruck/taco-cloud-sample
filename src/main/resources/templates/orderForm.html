@@ -18,7 +18,12 @@
         th:action="@{/orders}"
         th:object="${tacoOrder}"
       >
-        <h3>Deliver my taco masterpieces to...</h3>
+        <ul class="list-group">
+          <li class="list-group-item" th:each="taco : ${tacoOrder.tacos}">
+            <span th:text="${taco.designName}">taco name</span>
+          </li>
+        </ul>
+        <h3 class="mt-2">Deliver my taco masterpieces to...</h3>
         <div>
           <label class="form-label" for="deliveryName">Name: </label>
           <input
