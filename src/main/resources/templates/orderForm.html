@@ -7,6 +7,18 @@
 
   <body>
     <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Design Your Taco!</a>
+          <form class="d-flex" method="POST" th:action="@{/logout}">
+            <input
+              class="form-control me-2 btn btn-outline-success"
+              type="submit"
+              value="Logout"
+            />
+          </form>
+        </div>
+      </nav>
       <h1>Order your taco creations!</h1>
       <img th:src="@{/images/TacoCloud.png}" />
       <a class="btn btn-secondary" th:href="@{/design}" id="another"

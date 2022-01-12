@@ -9,9 +9,21 @@
 
   <body>
     <div class="container">
-      <h1>Design Your Taco!</h1>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Design Your Taco!</a>
+          <form class="d-flex" method="POST" th:action="@{/logout}">
+            <input
+              class="form-control me-2 btn btn-outline-success"
+              type="submit"
+              value="Logout"
+            />
+          </form>
+        </div>
+      </nav>
+      <h1></h1>
       <img th:src="@{/images/TacoCloud.png}" />
-      <form method="POST" th:object="${taco}">
+      <form method="POST" th:action="@{/design}" th:object="${taco}">
         <div
           class="invalid-feedback"
           th:if="${#fields.hasErrors('ingredients')}"
